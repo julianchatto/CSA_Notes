@@ -1,0 +1,8 @@
+Potion
+2
+AttackUp
+1
+Weed
+1
+Poop
+2

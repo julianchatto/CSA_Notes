@@ -1,0 +1,242 @@
+<html>
+<head>
+<title>CSAProj2.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #ed864a;}
+.s1 { color: #ebebeb;}
+.s2 { color: #ed864a; font-weight: bold;}
+.s3 { color: #7ec3e6;}
+.s4 { color: #33ccff; font-weight: bold;}
+.s5 { color: #54b33e;}
+</style>
+</head>
+<body bgcolor="#131314">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+CSAProj2.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java.util.Scanner</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">CSAProj2 {</span>
+    <span class="s0">public static void </span><span class="s1">main(String[] args) </span><span class="s0">throws </span><span class="s1">InterruptedException {</span>
+        <span class="s1">Scanner scan = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s2">;</span>
+
+        <span class="s3">// establishes all variables for game</span>
+        <span class="s0">int </span><span class="s1">gameContinuation = </span><span class="s4">1</span><span class="s2">, </span><span class="s1">retryCounter = </span><span class="s4">3</span><span class="s2">, </span><span class="s1">userInput</span><span class="s2">, </span><span class="s1">userInputAttic</span><span class="s2">;</span>
+
+
+        <span class="s1">System.out.println(</span><span class="s5">&quot;Welcome to the Escape Cornwells Hall Game!</span><span class="s0">\n</span><span class="s5">The point of the game is quite simple, escape Cornwells Hall...&quot;</span><span class="s1">)</span><span class="s2">;</span>
+
+
+        <span class="s3">// loops while user enters one and has more than 0 retries</span>
+        <span class="s0">while </span><span class="s1">(retryCounter != </span><span class="s4">0 </span><span class="s1">&amp;&amp; gameContinuation == </span><span class="s4">1</span><span class="s1">) {</span>
+            <span class="s1">Thread.sleep(</span><span class="s4">2000</span><span class="s1">)</span><span class="s2">;</span>
+            <span class="s1">System.out.println(</span><span class="s5">&quot;You have &quot; </span><span class="s1">+ retryCounter + </span><span class="s5">&quot; tries left to play the game.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+            <span class="s1">Thread.sleep(</span><span class="s4">1000</span><span class="s1">)</span><span class="s2">;</span>
+            <span class="s1">System.out.print(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">It's dark. The power is out and the you don't know where to look. </span><span class="s0">\n\n</span><span class="s5">To look for a lightswitch, press 1, to walk forward press 2.</span><span class="s0">\t</span><span class="s5">&quot;</span><span class="s1">)</span><span class="s2">;</span>
+            <span class="s1">userInput = scan.nextInt()</span><span class="s2">;</span>
+
+            <span class="s0">if </span><span class="s1">(userInput == </span><span class="s4">1</span><span class="s1">) { </span><span class="s3">// towards lightswitch</span>
+                <span class="s1">System.out.println(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">You find a lightswitch and turn it on. However, you quickly find out that the switch electrocutes you.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                <span class="s1">System.out.println(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">You die&quot;</span><span class="s1">)</span><span class="s2">; </span><span class="s3">// ending #1 BAD</span>
+
+            <span class="s1">} </span><span class="s0">else </span><span class="s1">{ </span><span class="s3">// walk forward</span>
+                <span class="s1">System.out.print(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">You find a wall. </span><span class="s0">\n\n</span><span class="s5">Would you like to walk to the left (1) or to the right (2)?</span><span class="s0">\t</span><span class="s5">&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                <span class="s1">userInput = scan.nextInt()</span><span class="s2">;</span>
+
+                <span class="s0">if </span><span class="s1">(userInput == </span><span class="s4">2</span><span class="s1">) { </span><span class="s3">// goes right</span>
+                    <span class="s1">System.out.println(</span><span class="s5">&quot;You continue walking along side the wall and find a breaker. </span><span class="s0">\n\n</span><span class="s5">You open the breaker and a few spiders crawl out.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                    <span class="s1">Thread.sleep(</span><span class="s4">4000</span><span class="s1">)</span><span class="s2">;</span>
+
+                    <span class="s1">System.out.println(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">All hope is not lost, however, because you find the main switch off and flip the button&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                    <span class="s1">System.out.println(</span><span class="s5">&quot;The lights come on and you realize that you are high above Cornwells Hall in the attic. Ahead in the distance you see the a set of stairs leading down.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                    <span class="s1">System.out.print(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">Do you (1) look around the attic or (2) head down the stairs.</span><span class="s0">\t</span><span class="s5">&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                    <span class="s1">userInputAttic = scan.nextInt()</span><span class="s2">;</span>
+
+                    <span class="s0">if </span><span class="s1">(userInputAttic == </span><span class="s4">1</span><span class="s1">) { </span><span class="s3">// looks around attic and finds intel</span>
+                        <span class="s1">Thread.sleep(</span><span class="s4">1000</span><span class="s1">)</span><span class="s2">;</span>
+                        <span class="s1">System.out.println(</span><span class="s5">&quot;You look around the attic rummaging through the vast and creepy storage. You find ancient scrolls describing the buildings and architecture. </span><span class="s0">\n</span><span class="s5">Further rummaging reveals an article claiming of an evil wizard in the Cornwells locker room. You keep this in the back of your mind.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                    <span class="s1">}</span>
+
+                    <span class="s1">System.out.println(</span><span class="s5">&quot;You continue down the stairwell.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                    <span class="s1">Thread.sleep(</span><span class="s4">2000</span><span class="s1">)</span><span class="s2">;</span>
+                    <span class="s1">System.out.println(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">After exiting the staircase, you find yourself in Mr. Profy's class. Recognizing your location, you think about the quickest exit path.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                    <span class="s1">System.out.println(</span><span class="s5">&quot;You decide to walk to the stairs outside his room and hed all the way down and exist through the door.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                    <span class="s1">Thread.sleep(</span><span class="s4">5000</span><span class="s1">)</span><span class="s2">;</span>
+                    <span class="s1">System.out.println(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">Walking through his door, you come up on the stairs. </span><span class="s0">\n</span><span class="s5">Quickly you find out that the stairs are blocked, you decide that you must continue down the hallway.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                    <span class="s1">Thread.sleep(</span><span class="s4">5000</span><span class="s1">)</span><span class="s2">;</span>
+                    <span class="s1">System.out.print(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">You continue walking past Mr. Eckerle's room and come up on the chem labs. You hear an ominous panting sound coming from the staircase next to Ms. Conville's room.</span><span class="s0">\n\n</span><span class="s5">You must make a decision. </span><span class="s0">\n</span><span class="s5">Do you (1) continue to the staircase behind Mrs. Hill's room or (2) head down the current staircase?</span><span class="s0">\t</span><span class="s5">&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                    <span class="s1">userInput = scan.nextInt()</span><span class="s2">;</span>
+
+                    <span class="s0">if </span><span class="s1">(userInput == </span><span class="s4">1</span><span class="s1">) { </span><span class="s3">// hill staircase</span>
+                        <span class="s1">System.out.println(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">You continue past the chem labs and approach Mrs. Hill's room. </span><span class="s0">\n</span><span class="s5">You find the door locked but pull so hard, the door comes flying off.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                        <span class="s1">System.out.println(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">You continue through her classroom and out through the back room. You reach the bottom of the steps but the door to outside is locked and you can't get it to budge. </span><span class="s0">\n</span><span class="s5">You continue through to the art room and past the side door entrance, all locked.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+
+                        <span class="s3">// specifies text based on decision in attic</span>
+                        <span class="s0">if </span><span class="s1">(userInputAttic == </span><span class="s4">1</span><span class="s1">) {</span>
+                            <span class="s1">System.out.println(</span><span class="s5">&quot;Knowing there to be an exit through the locker room storage closest, you hed to the locker room despite your knowledge of the wizard. </span><span class="s0">\n</span><span class="s5">After entering the locker room you spot the wizard.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                            <span class="s1">System.out.println(</span><span class="s5">&quot;Underestimating its power, you attempt to get a quick punch at it. However, with nothing to defend yourself, you quickly loose the battle.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                            <span class="s1">System.out.println(</span><span class="s5">&quot;</span><span class="s0">\n\n</span><span class="s5">You die.&quot;</span><span class="s1">)</span><span class="s2">; </span><span class="s3">// ending #3 BAD</span>
+
+                        <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+                            <span class="s1">System.out.println(</span><span class="s5">&quot;Knowing there to be an exit through the locker room storage closest, you hed to the locker room&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                            <span class="s1">Thread.sleep(</span><span class="s4">3000</span><span class="s1">)</span><span class="s2">;</span>
+                            <span class="s1">System.out.println(</span><span class="s5">&quot;After entering the locker room you recognize a friendly-looking creature of in the distance. You approach it and attempt to make friends.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                            <span class="s1">System.out.println(</span><span class="s5">&quot;Quickly recognizing your mistake, the friendly-looking creature turns around attacks you. With nothing to defend yourself, you quickly loose the battle.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                            <span class="s1">System.out.println(</span><span class="s5">&quot;You die.&quot;</span><span class="s1">)</span><span class="s2">; </span><span class="s3">// ending #3 BAD</span>
+                        <span class="s1">}</span>
+
+                    <span class="s1">} </span><span class="s0">else </span><span class="s1">{ </span><span class="s3">// weird sound staircase</span>
+                        <span class="s1">System.out.println(</span><span class="s5">&quot;After heading down 1 level of stairs, you realize the stairs further down are blocked, you decide to turn right and head down the stairs next to Profe's room.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                        <span class="s1">Thread.sleep(</span><span class="s4">3000</span><span class="s1">)</span><span class="s2">;</span>
+                        <span class="s1">System.out.println(</span><span class="s5">&quot;All of a sudden Dr. Pollock's door swings open smacking you in the forehead. A massive bump quickly appears on your forehead.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                        <span class="s1">System.out.println(</span><span class="s5">&quot;After regaining your train of thought, you head past his room and down the stairs. </span><span class="s0">\n</span><span class="s5">You reach the bottom of the steps but the door to outside is locked and you can't get it to budge. So you head right from the bottom of the stairs towards Mrs. Busheks room.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                        <span class="s1">Thread.sleep(</span><span class="s4">5000</span><span class="s1">)</span><span class="s2">;</span>
+                        <span class="s1">System.out.print(</span><span class="s5">&quot;Passing her room, you notice Mrs. Bushek diligently working. </span><span class="s0">\n</span><span class="s5">Do you ask her to (1) treat your wound or (2) wait until you escape Cornwells Hall.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                        <span class="s1">userInput = scan.nextInt()</span><span class="s2">;</span>
+
+                        <span class="s0">if </span><span class="s1">(userInput == </span><span class="s4">2</span><span class="s1">) { </span><span class="s3">//avoids treatment</span>
+                            <span class="s1">System.out.println(</span><span class="s5">&quot;You continue past her room and head down the stairs next to the chapel. </span><span class="s0">\n</span><span class="s5">However, while heading down the stairs to the kitchen, your vision becomes cloudy and you fall down the stairs and pass out, breaking several bones and suffering great internal bleeding.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                            <span class="s1">System.out.println(</span><span class="s5">&quot;You quickly realize how much of a fool you were for not seeking Mrs. Bushek's help.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                            <span class="s1">Thread.sleep(</span><span class="s4">2000</span><span class="s1">)</span><span class="s2">;</span>
+                            <span class="s1">System.out.println(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">You die of your injuries.&quot;</span><span class="s1">)</span><span class="s2">; </span><span class="s3">// Ending #4 BAD</span>
+
+                        <span class="s1">} </span><span class="s0">else </span><span class="s1">{ </span><span class="s3">// goes for treatment</span>
+                            <span class="s1">System.out.println(</span><span class="s5">&quot;Mrs. Bushek quickly patches you up and hands you a sword with no context. You accept her offer. </span><span class="s0">\n</span><span class="s5">You then continue on your way down the stairs by the chapel and down the stairs to the kitchen&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                            <span class="s1">System.out.println(</span><span class="s5">&quot;You then hed up the ramp to the locker room&quot;</span><span class="s1">)</span><span class="s2">;</span>
+
+                            <span class="s3">/// specifies text based on decision in attic</span>
+                            <span class="s0">if </span><span class="s1">(userInputAttic == </span><span class="s4">1</span><span class="s1">) {</span>
+                                <span class="s1">Thread.sleep(</span><span class="s4">5000</span><span class="s1">)</span><span class="s2">;</span>
+                                <span class="s1">System.out.println(</span><span class="s5">&quot;You then hed up the ramp to the locker room. Knowing there to be an exit through the locker room storage closest, you hed to the locker room despite your knowledge of the wizard. After entering the locker room you spot the wizard.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                                <span class="s1">System.out.println(</span><span class="s5">&quot;Realizing Mrs. Bushek gave you a sword, you are able to sneak up on the wizard and back stab it, killing it instantly.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                                <span class="s1">System.out.println(</span><span class="s5">&quot;You go through the storage closet and exit through the spider ridden door.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                                <span class="s1">System.out.println(</span><span class="s5">&quot;</span><span class="s0">\n\n</span><span class="s5">You win the game!&quot;</span><span class="s1">)</span><span class="s2">; </span><span class="s3">// Ending #1 GOOD</span>
+
+                            <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+                                <span class="s1">Thread.sleep(</span><span class="s4">5000</span><span class="s1">)</span><span class="s2">;</span>
+                                <span class="s1">System.out.println(</span><span class="s5">&quot;You then hed up the ramp to the locker room, knowing there to be an exit through the locker room storage closest.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                                <span class="s1">System.out.println(</span><span class="s5">&quot;After entering the locker room you recognize a friendly-looking creature of in the distance. You approach it and attempt to make friends.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                                <span class="s1">Thread.sleep(</span><span class="s4">2000</span><span class="s1">)</span><span class="s2">;</span>
+                                <span class="s1">System.out.println(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">Quickly recognizing your mistake, the friendly-looking creature turns around attacks you. Realizing that Mrs. Bushek gave you a sword, you back stab the wizard, killing it instantly.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                                <span class="s1">System.out.println(</span><span class="s5">&quot;</span><span class="s0">\n\n</span><span class="s5">You win the game!&quot;</span><span class="s1">)</span><span class="s2">; </span><span class="s3">// Ending #1 GOOD</span>
+
+                            <span class="s1">}</span>
+                        <span class="s1">}</span>
+                    <span class="s1">}</span>
+                <span class="s1">} </span><span class="s0">else </span><span class="s1">{  </span><span class="s3">// goes left</span>
+                    <span class="s1">System.out.println(</span><span class="s5">&quot;You find a staircase leading down. Do you (1) continue down the stairs or (2) head back and continue to the right?&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                    <span class="s1">userInput = scan.nextInt()</span><span class="s2">;</span>
+
+                    <span class="s0">if </span><span class="s1">(userInput == </span><span class="s4">2</span><span class="s1">) { </span><span class="s3">// heads back to breaker</span>
+                        <span class="s1">System.out.println(</span><span class="s5">&quot;You continue walking along side the wall and find a breaker. </span><span class="s0">\n\n</span><span class="s5">You open the breaker and a few spiders crawl out.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                        <span class="s1">Thread.sleep(</span><span class="s4">4000</span><span class="s1">)</span><span class="s2">;</span>
+
+                        <span class="s1">System.out.println(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">All hope is not lost, however, because you find the main switch off and flip the button&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                        <span class="s1">System.out.println(</span><span class="s5">&quot;The lights come on and you realize that you are high above Cornwells Hall in the attic. Ahead in the distance you see the a set of stairs leading down.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                        <span class="s1">System.out.print(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">Do you (1) look around the attic or (2) head down the stairs.</span><span class="s0">\t</span><span class="s5">&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                        <span class="s1">userInputAttic = scan.nextInt()</span><span class="s2">;</span>
+
+                        <span class="s0">if </span><span class="s1">(userInputAttic == </span><span class="s4">1</span><span class="s1">) { </span><span class="s3">// looks around attic and finds intel</span>
+                            <span class="s1">Thread.sleep(</span><span class="s4">1000</span><span class="s1">)</span><span class="s2">;</span>
+                            <span class="s1">System.out.println(</span><span class="s5">&quot;You look around the attic rummaging through the vast and creepy storage. You find ancient scrolls describing the buildings and architecture. </span><span class="s0">\n</span><span class="s5">Further rummaging reveals an article claiming of an evil wizard in the Cornwells locker room. You keep this in the back of your mind.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                        <span class="s1">}</span>
+
+                        <span class="s1">System.out.println(</span><span class="s5">&quot;You continue down the stairwell.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                        <span class="s1">Thread.sleep(</span><span class="s4">2000</span><span class="s1">)</span><span class="s2">;</span>
+                        <span class="s1">System.out.println(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">After exiting the staircase, you find yourself in Mr. Profy's class. Recognizing your location, you think about the quickest exit path.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                        <span class="s1">System.out.println(</span><span class="s5">&quot;You decide to walk to the stairs outside his room and hed all the way down and exist through the door.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                        <span class="s1">Thread.sleep(</span><span class="s4">5000</span><span class="s1">)</span><span class="s2">;</span>
+                        <span class="s1">System.out.println(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">Walking through his door, you come up on the stairs. </span><span class="s0">\n</span><span class="s5">Quickly you find out that the stairs are blocked, you decide that you must continue down the hallway.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                        <span class="s1">Thread.sleep(</span><span class="s4">5000</span><span class="s1">)</span><span class="s2">;</span>
+                        <span class="s1">System.out.print(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">You continue walking past Mr. Eckerle's room and come up on the chem labs. You hear an ominous panting sound coming from the staircase next to Ms. Conville's room.</span><span class="s0">\n\n</span><span class="s5">You must make a decision. </span><span class="s0">\n</span><span class="s5">Do you (1) continue to the staircase behind Mrs. Hill's room or (2) head down the current staircase?</span><span class="s0">\t</span><span class="s5">&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                        <span class="s1">userInput = scan.nextInt()</span><span class="s2">;</span>
+
+                        <span class="s0">if </span><span class="s1">(userInput == </span><span class="s4">1</span><span class="s1">) { </span><span class="s3">// hill staircase</span>
+                            <span class="s1">System.out.println(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">You continue past the chem labs and approach Mrs. Hill's room. </span><span class="s0">\n</span><span class="s5">You find the door locked but pull so hard, the door comes flying off.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                            <span class="s1">System.out.println(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">You continue through her classroom and out through the back room. You reach the bottom of the steps but the door to outside is locked and you can't get it to budge. </span><span class="s0">\n</span><span class="s5">You continue through to the art room and past the side door entrance, all locked.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+
+                            <span class="s3">// specifies text based on decision in attic</span>
+                            <span class="s0">if </span><span class="s1">(userInputAttic == </span><span class="s4">1</span><span class="s1">) {</span>
+                                <span class="s1">System.out.println(</span><span class="s5">&quot;Knowing there to be an exit through the locker room storage closest, you hed to the locker room despite your knowledge of the wizard. </span><span class="s0">\n</span><span class="s5">After entering the locker room you spot the wizard.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                                <span class="s1">System.out.println(</span><span class="s5">&quot;Underestimating its power, you attempt to get a quick punch at it. However, with nothing to defend yourself, you quickly loose the battle.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                                <span class="s1">System.out.println(</span><span class="s5">&quot;</span><span class="s0">\n\n</span><span class="s5">You die.&quot;</span><span class="s1">)</span><span class="s2">; </span><span class="s3">// ending #3 BAD</span>
+
+                            <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+                                <span class="s1">System.out.println(</span><span class="s5">&quot;Knowing there to be an exit through the locker room storage closest, you hed to the locker room&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                                <span class="s1">Thread.sleep(</span><span class="s4">3000</span><span class="s1">)</span><span class="s2">;</span>
+                                <span class="s1">System.out.println(</span><span class="s5">&quot;After entering the locker room you recognize a friendly-looking creature of in the distance. You approach it and attempt to make friends.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                                <span class="s1">System.out.println(</span><span class="s5">&quot;Quickly recognizing your mistake, the friendly-looking creature turns around attacks you. With nothing to defend yourself, you quickly loose the battle.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                                <span class="s1">System.out.println(</span><span class="s5">&quot;You die.&quot;</span><span class="s1">)</span><span class="s2">; </span><span class="s3">//ending #3 BAD</span>
+                            <span class="s1">}</span>
+
+                        <span class="s1">} </span><span class="s0">else </span><span class="s1">{ </span><span class="s3">// weird sound staircase</span>
+                            <span class="s1">System.out.println(</span><span class="s5">&quot;After heading down 1 level of stairs, you realize the stairs further down are blocked, you decide to turn right and head down the stairs next to Profe's room.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                            <span class="s1">Thread.sleep(</span><span class="s4">3000</span><span class="s1">)</span><span class="s2">;</span>
+                            <span class="s1">System.out.println(</span><span class="s5">&quot;All of a sudden Dr. Pollock's door swings open smacking you in the forehead. A massive bump quickly appears on your forehead.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                            <span class="s1">System.out.println(</span><span class="s5">&quot;After regaining your train of thought, you head past his room and down the stairs. </span><span class="s0">\n</span><span class="s5">You reach the bottom of the steps but the door to outside is locked and you can't get it to budge. So you head right from the bottom of the stairs towards Mrs. Busheks room.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                            <span class="s1">Thread.sleep(</span><span class="s4">5000</span><span class="s1">)</span><span class="s2">;</span>
+                            <span class="s1">System.out.print(</span><span class="s5">&quot;Passing her room, you notice Mrs. Bushek diligently working. </span><span class="s0">\n</span><span class="s5">Do you ask her to (1) treat your wound or (2) wait until you escape Cornwells Hall.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                            <span class="s1">userInput = scan.nextInt()</span><span class="s2">;</span>
+
+                            <span class="s0">if </span><span class="s1">(userInput == </span><span class="s4">2</span><span class="s1">) { </span><span class="s3">// avoids treatment</span>
+                                <span class="s1">System.out.println(</span><span class="s5">&quot;You continue past her room and head down the stairs next to the chapel. </span><span class="s0">\n</span><span class="s5">However, while heading down the stairs to the kitchen, your vision becomes cloudy and you fall down the stairs and pass out, breaking several bones and suffering great internal bleeding.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                                <span class="s1">System.out.println(</span><span class="s5">&quot;You quickly realize how much of a fool you were for not seeking Mrs. Bushek's help.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                                <span class="s1">Thread.sleep(</span><span class="s4">2000</span><span class="s1">)</span><span class="s2">;</span>
+                                <span class="s1">System.out.println(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">You die of your injuries.&quot;</span><span class="s1">)</span><span class="s2">; </span><span class="s3">// ending #4 BAD</span>
+
+                            <span class="s1">} </span><span class="s0">else </span><span class="s1">{ </span><span class="s3">// gets treatment</span>
+                                <span class="s1">System.out.println(</span><span class="s5">&quot;Mrs. Bushek quickly patches you up and hands you a sword with no context. You accept her offer. </span><span class="s0">\n</span><span class="s5">You then continue on your way down the stairs by the chapel and down the stairs to the kitchen&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                                <span class="s1">System.out.println(</span><span class="s5">&quot;You then hed up the ramp to the locker room&quot;</span><span class="s1">)</span><span class="s2">;</span>
+
+                                <span class="s3">// specifies text based on decision in attic</span>
+                                <span class="s0">if </span><span class="s1">(userInputAttic == </span><span class="s4">1</span><span class="s1">) {</span>
+                                    <span class="s1">Thread.sleep(</span><span class="s4">5000</span><span class="s1">)</span><span class="s2">;</span>
+                                    <span class="s1">System.out.println(</span><span class="s5">&quot;You then hed up the ramp to the locker room. Knowing there to be an exit through the locker room storage closest, you hed to the locker room despite your knowledge of the wizard. After entering the locker room you spot the wizard.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                                    <span class="s1">System.out.println(</span><span class="s5">&quot;Realizing Mrs. Bushek gave you a sword, you are able to sneak up on the wizard and back stab it, killing it instantly.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                                    <span class="s1">System.out.println(</span><span class="s5">&quot;You go through the storage closet and exit through the spider ridden door.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                                    <span class="s1">System.out.println(</span><span class="s5">&quot;</span><span class="s0">\n\n</span><span class="s5">You win the game!&quot;</span><span class="s1">)</span><span class="s2">; </span><span class="s3">// Ending #1 GOOD</span>
+
+                                <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+                                    <span class="s1">Thread.sleep(</span><span class="s4">5000</span><span class="s1">)</span><span class="s2">;</span>
+                                    <span class="s1">System.out.println(</span><span class="s5">&quot;You then hed up the ramp to the locker room, knowing there to be an exit through the locker room storage closest.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                                    <span class="s1">System.out.println(</span><span class="s5">&quot;After entering the locker room you recognize a friendly-looking creature of in the distance. You approach it and attempt to make friends.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                                    <span class="s1">Thread.sleep(</span><span class="s4">2000</span><span class="s1">)</span><span class="s2">;</span>
+                                    <span class="s1">System.out.println(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">Quickly recognizing your mistake, the friendly-looking creature turns around attacks you. Realizing that Mrs. Bushek gave you a sword, you back stab the wizard, killing it instantly.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                                    <span class="s1">System.out.println(</span><span class="s5">&quot;</span><span class="s0">\n\n</span><span class="s5">You win the game!&quot;</span><span class="s1">)</span><span class="s2">; </span><span class="s3">// Ending #1 GOOD</span>
+
+                                <span class="s1">}</span>
+                            <span class="s1">}</span>
+                        <span class="s1">}</span>
+                    <span class="s1">} </span><span class="s0">else </span><span class="s1">{ </span><span class="s3">// continues down the stairs</span>
+                        <span class="s1">System.out.println(</span><span class="s5">&quot;After continuing down the stairs, you see movement. Suddenly a man who you make out to be Mr. Profy grabs you by the face scaring you so much that you have a heart attack.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+                        <span class="s1">System.out.println(</span><span class="s5">&quot;</span><span class="s0">\n\n</span><span class="s5">You die.&quot;</span><span class="s1">)</span><span class="s2">; </span><span class="s3">//ending #2 BAD</span>
+                    <span class="s1">}</span>
+                <span class="s1">}</span>
+            <span class="s1">}</span>
+
+
+            <span class="s1">System.out.print(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">Would you like to play again? Yes (1), No (2)&quot;</span><span class="s1">)</span><span class="s2">;</span>
+            <span class="s1">gameContinuation = scan.nextInt()</span><span class="s2">;</span>
+
+            <span class="s1">retryCounter--</span><span class="s2">;</span>
+
+        <span class="s1">}</span>
+
+
+        <span class="s0">if </span><span class="s1">(retryCounter == </span><span class="s4">0</span><span class="s1">) { </span><span class="s3">// no more tries</span>
+            <span class="s1">System.out.println(</span><span class="s5">&quot;You ran out of tries. Good luck next time!&quot;</span><span class="s1">)</span><span class="s2">;</span>
+
+        <span class="s1">} </span><span class="s0">else </span><span class="s1">{ </span><span class="s3">// if user is done</span>
+            <span class="s1">System.out.println(</span><span class="s5">&quot;Thanks for playing the game; I hope you play again.&quot;</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">}</span>
+
+
+    <span class="s1">}</span>
+
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
